@@ -8,6 +8,11 @@
 
 # give credits
 __author__ = "kamela williamson"
+# https://automatetheboringstuff.com/chapter8/
+# https://docs.python.org/3/library/os.path.html
+# https://www.tutorialspoint.com/python/os_listdir.htm
+# https://realpython.com/documenting-python-code/#documenting-your-python-code-base-using-docstrings
+# https://docs.python.org/3/library/subprocess.html
 
 import re
 import os
@@ -19,17 +24,34 @@ import argparse
 
 def get_special_paths(dirname):
     """Given a dirname, returns a list of all its special files."""
+    # returns list of absolute paths of special files in given directory
     # your code here
-    return
+    d_files = os.listdir(dirname)
+    special_files = []
+    # print
+    for file in d_files:
+        s_file = re.search(r'__\w+__', file)
+        if s_file:
+            special_files.append(os.path.abspath(os.path.join(dirname, file)))
+    return special_files
 
 
 def copy_to(path_list, dest_dir):
+    """copy files into the directory from the paths"""
     # your code here
-    return
+    if not os.path.isdir(dest_dir):
+        os.makedirs(dest_dir)
+    for path in path_list:
+        dest_path = os.path.join(dest_dir, os.path.basename(path))
+        print('copy_to = {} dest_path = {} '.format(path, dest_path))
+        shutil.copy(path, dest_path)
+    # return
 
 
 def zip_to(path_list, dest_zip):
+    """zip files up into a zipfile """
     # your code here
+    
     return
 
 
