@@ -13,6 +13,8 @@ __author__ = "kamela williamson"
 # https://www.tutorialspoint.com/python/os_listdir.htm
 # https://realpython.com/documenting-python-code/#documenting-your-python-code-base-using-docstrings
 # https://docs.python.org/3/library/subprocess.html
+# https://www.youtube.com/watch?v=2Fp1N6dof0Y&feature=youtu.be
+# https://docs.python.org/3/tutorial/stdlib.html
 
 import re
 import os
@@ -45,14 +47,15 @@ def copy_to(path_list, dest_dir):
         dest_path = os.path.join(dest_dir, os.path.basename(path))
         print('copy_to = {} dest_path = {} '.format(path, dest_path))
         shutil.copy(path, dest_path)
-    # return
 
 
 def zip_to(path_list, dest_zip):
     """zip files up into a zipfile """
     # your code here
-    
-    return
+    cmd = ['zip', '-j', dest_zip]
+    cmd.extend(path_list)
+    print('Command about to be executed: {}'.format(cmd))
+    subprocess.call(cmd)
 
 
 def main(args):
