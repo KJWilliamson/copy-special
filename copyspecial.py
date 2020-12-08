@@ -18,6 +18,7 @@ __author__ = "kamela williamson"
 # https://www.youtube.com/watch?v=2Fp1N6dof0Y&feature=youtu.be
 # https://docs.python.org/3/tutorial/stdlib.html
 # https://www.geeksforgeeks.org/working-zip-files-python/
+# https://realpython.com/command-line-interfaces-python-argparse/
 
 import re
 import os
@@ -54,6 +55,7 @@ def zip_to(path_list, dest_zip):
     # your code here
     command = ['zip', '-j', dest_zip]
     command.extend(path_list)
+    print(command)
     print('Command about to be executed: {}'.format(command))
     subprocess.call(command)
 
