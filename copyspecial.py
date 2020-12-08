@@ -27,11 +27,9 @@ import argparse
 
 def get_special_paths(dirname):
     """Given a dirname, returns a list of all its special files."""
-    # returns list of absolute paths of special files in given directory
     # your code here
     d_files = os.listdir(dirname)
     special_files = []
-    # print
     for file in d_files:
         s_file = re.search(r'__\w+__', file)
         if s_file:
