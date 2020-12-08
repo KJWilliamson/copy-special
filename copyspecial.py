@@ -17,6 +17,7 @@ __author__ = "kamela williamson"
 # https://docs.python.org/3/library/subprocess.html
 # https://www.youtube.com/watch?v=2Fp1N6dof0Y&feature=youtu.be
 # https://docs.python.org/3/tutorial/stdlib.html
+# https://www.geeksforgeeks.org/working-zip-files-python/
 
 import re
 import os
@@ -51,10 +52,10 @@ def copy_to(path_list, dest_dir):
 def zip_to(path_list, dest_zip):
     """zip files up into a zipfile """
     # your code here
-    cmd = ['zip', '-j', dest_zip]
-    cmd.extend(path_list)
-    print('Command about to be executed: {}'.format(cmd))
-    subprocess.call(cmd)
+    command = ['zip', '-j', dest_zip]
+    command.extend(path_list)
+    print('Command about to be executed: {}'.format(command))
+    subprocess.call(command)
 
 
 def main(args):
