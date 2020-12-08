@@ -8,6 +8,7 @@
 
 # give credits
 __author__ = "kamela williamson"
+# got clarifiaction on parts of assessment from Jalon and DeQuan
 # https://automatetheboringstuff.com/chapter8/
 # https://docs.python.org/3/library/os.path.html
 # https://www.tutorialspoint.com/python/os_listdir.htm
@@ -65,6 +66,7 @@ def main(args):
     parser.add_argument('--todir', help='dest dir for special files')
     parser.add_argument('--tozip', help='dest zipfile for special files')
     # TODO: add one more argument definition to parse the 'from_dir' argument
+    parser.add_argument('from_dir', help='origin dir for special files')
     ns = parser.parse_args(args)
 
     # TODO: you must write your own code to get the command line args.
@@ -74,8 +76,21 @@ def main(args):
     # This is input data validation. If something is wrong (or missing) with
     # any required args, the general rule is to print a usage message and
     # exit(1).
-
     # Your code here: Invoke (call) your functions
+    if not ns:
+        parser.print_usage()
+        sys.exit(1)
+
+    todir = ns.todir
+    tozip = ns.tozip
+    from_dir = ns.from_dir
+    special_files = get_special_paths(from_dir)
+    if todir:
+        copy_to(special_files, todir)
+    elif tozip:
+        zip_to(special_files, tozip)
+    else:
+        print('\n'.join(special_files))
 
 
 if __name__ == "__main__":
