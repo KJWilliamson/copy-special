@@ -9,6 +9,7 @@
 # give credits
 __author__ = "kamela williamson"
 # got clarifiaction on parts of assessment from Jalon and DeQuan
+# Daniel's demo on argparse
 # https://automatetheboringstuff.com/chapter8/
 # https://docs.python.org/3/library/os.path.html
 # https://www.tutorialspoint.com/python/os_listdir.htm
@@ -64,7 +65,7 @@ def main(args):
     parser.add_argument('--todir', help='dest dir for special files')
     parser.add_argument('--tozip', help='dest zipfile for special files')
     # TODO: add one more argument definition to parse the 'from_dir' argument
-    parser.add_argument('from_dir', help='dest dir for special files')
+    parser.add_argument('from_dir', help='original dir for special files')
     ns = parser.parse_args(args)
 
     # TODO: you must write your own code to get the command line args.
