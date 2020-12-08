@@ -45,7 +45,6 @@ def copy_to(path_list, dest_dir):
         os.makedirs(dest_dir)
     for path in path_list:
         dest_path = os.path.join(dest_dir, os.path.basename(path))
-        print('copy_to = {} dest_path = {} '.format(path, dest_path))
         shutil.copy(path, dest_path)
 
 
