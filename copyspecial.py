@@ -66,7 +66,7 @@ def main(args):
     parser.add_argument('--todir', help='dest dir for special files')
     parser.add_argument('--tozip', help='dest zipfile for special files')
     # TODO: add one more argument definition to parse the 'from_dir' argument
-    parser.add_argument('from_dir', help='origin dir for special files')
+    parser.add_argument('from_dir', help='dest dir for special files')
     ns = parser.parse_args(args)
 
     # TODO: you must write your own code to get the command line args.
