@@ -19,6 +19,7 @@ __author__ = "kamela williamson"
 # https://docs.python.org/3/tutorial/stdlib.html
 # https://www.geeksforgeeks.org/working-zip-files-python/
 # https://realpython.com/command-line-interfaces-python-argparse/
+# https://realpython.com/python-exceptions/
 
 import re
 import os
@@ -53,10 +54,13 @@ def copy_to(path_list, dest_dir):
 def zip_to(path_list, dest_zip):
     """zip files up into a zipfile """
     # your code here
+    # list of commands which are zip, -j, dest_zip
     command = ['zip', '-j', dest_zip]
+    # extending a path list onto that command list
     command.extend(path_list)
-    print(command)
+    # printing the command to be executed
     print('Command about to be executed: {}'.format(command))
+    # takes in a list and converts it to a command-line readable call
     subprocess.call(command)
 
 
