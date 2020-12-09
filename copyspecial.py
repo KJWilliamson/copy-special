@@ -20,6 +20,7 @@ __author__ = "kamela williamson"
 # https://www.geeksforgeeks.org/working-zip-files-python/
 # https://realpython.com/command-line-interfaces-python-argparse/
 # https://realpython.com/python-exceptions/
+# https://queirozf.com/entries/python-3-subprocess-exampleshttps://queirozf.com/entries/python-3-subprocess-examples
 
 import re
 import os
